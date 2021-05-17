@@ -1,14 +1,14 @@
 ﻿within TILMedia;
 package VLEFluidObjectFunctions
   "Package for calculation of VLEFLuid properties with a functional call, referencing existing external objects for highspeed evaluation"
-  extends .TILMedia.BaseClasses.PartialVLEFluidObjectFunctions;
+  extends TILMedia.BaseClasses.PartialVLEFluidObjectFunctions;
 
   redeclare replaceable function specificEnthalpy_dTxi =
-    .TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.specificEnthalpy_dTxi;
+    TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.specificEnthalpy_dTxi;
   redeclare replaceable function pressure_dTxi =
-    .TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.pressure_dTxi;
+    TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.pressure_dTxi;
   redeclare replaceable function specificEntropy_dTxi =
-    .TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.specificEntropy_dTxi;
+    TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.specificEntropy_dTxi;
   redeclare replaceable function extends moleFraction_dTxin
   external"C" x = TILMedia_VLEFluidObjectFunctions_moleFraction_dTxin(
       d,
@@ -352,11 +352,11 @@ package VLEFluidObjectFunctions
   end vapourIsothermalCompressibility_dTxi;
 
   redeclare replaceable function density_phxi =
-    .TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.density_phxi;
+    TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.density_phxi;
   redeclare replaceable function specificEntropy_phxi =
-    .TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.specificEntropy_phxi;
+    TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.specificEntropy_phxi;
   redeclare replaceable function temperature_phxi =
-    .TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.temperature_phxi;
+    TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.temperature_phxi;
   redeclare replaceable function extends moleFraction_phxin
   external"C" x = TILMedia_VLEFluidObjectFunctions_moleFraction_phxin(
       p,
@@ -700,11 +700,11 @@ package VLEFluidObjectFunctions
   end vapourIsothermalCompressibility_phxi;
 
   redeclare replaceable function density_psxi =
-    .TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.density_psxi;
+    TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.density_psxi;
   redeclare replaceable function specificEnthalpy_psxi =
-    .TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.specificEnthalpy_psxi;
+    TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.specificEnthalpy_psxi;
   redeclare replaceable function temperature_psxi =
-    .TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.temperature_psxi;
+    TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.temperature_psxi;
   redeclare replaceable function extends moleFraction_psxin
   external"C" x = TILMedia_VLEFluidObjectFunctions_moleFraction_psxin(
       p,
@@ -1048,11 +1048,11 @@ package VLEFluidObjectFunctions
   end vapourIsothermalCompressibility_psxi;
 
   redeclare replaceable function density_pTxi =
-    .TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.density_pTxi;
+    TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.density_pTxi;
   redeclare replaceable function specificEnthalpy_pTxi =
-    .TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.specificEnthalpy_pTxi;
+    TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.specificEnthalpy_pTxi;
   redeclare replaceable function specificEntropy_pTxi =
-    .TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.specificEntropy_pTxi;
+    TILMedia.Internals.VLEFluidObjectFunctions.PureComponentDerivatives.specificEntropy_pTxi;
   redeclare replaceable function extends moleFraction_pTxin
   external"C" x = TILMedia_VLEFluidObjectFunctions_moleFraction_pTxin(
       p,

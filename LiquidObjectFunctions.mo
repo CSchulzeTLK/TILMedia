@@ -1,7 +1,7 @@
 ﻿within TILMedia;
 package LiquidObjectFunctions
   "Package for calculation of liquid properties with a functional call, referencing existing external objects for highspeed evaluation"
-  extends .TILMedia.BaseClasses.PartialLiquidObjectFunctions;
+  extends TILMedia.BaseClasses.PartialLiquidObjectFunctions;
 
   redeclare replaceable function
     extends specificEntropy_phxi

@@ -1,7 +1,7 @@
 ﻿within TILMedia;
 package GasObjectFunctions
   "Package for calculation of gas vapor properties with a functional call, referencing existing external objects for highspeed evaluation"
-  extends .TILMedia.BaseClasses.PartialGasObjectFunctions;
+  extends TILMedia.BaseClasses.PartialGasObjectFunctions;
 
   redeclare replaceable function
     extends density_phxi

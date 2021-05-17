@@ -1,11 +1,11 @@
 ﻿within TILMedia.BaseClasses;
 partial model PartialLiquid "Incompressible liquid model for object and member function based evaluation"
 
-  replaceable parameter .TILMedia.LiquidTypes.TILMedia_Water liquidType
-    constrainedby .TILMedia.LiquidTypes.BaseLiquid "type record of the liquid"
+  replaceable parameter TILMedia.LiquidTypes.TILMedia_Water liquidType
+    constrainedby TILMedia.LiquidTypes.BaseLiquid "type record of the liquid"
     annotation (choicesAllMatching=true);
 
-  parameter .TILMedia.Internals.TILMediaExternalObject liquidPointer annotation (Dialog(tab="Advanced"));
+  parameter TILMedia.Internals.TILMediaExternalObject liquidPointer annotation (Dialog(tab="Advanced"));
 
   parameter Boolean computeTransportProperties = false
     "=true, if transport properties are calculated"
@@ -13,88 +13,88 @@ partial model PartialLiquid "Incompressible liquid model for object and member f
 
 
   replaceable partial function s_phxi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificEntropy_phxi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificEntropy_phxi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificEntropy_phxi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificEntropy_phxi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
 
   replaceable partial function s_pTxi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificEntropy_pTxi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificEntropy_pTxi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificEntropy_pTxi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificEntropy_pTxi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
 
 
   replaceable partial function d_Txi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.density_Txi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.density_Txi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.density_Txi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.density_Txi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
   replaceable partial function h_Txi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificEnthalpy_Txi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificEnthalpy_Txi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificEnthalpy_Txi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificEnthalpy_Txi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
   replaceable partial function cp_Txi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificIsobaricHeatCapacity_Txi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificIsobaricHeatCapacity_Txi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificIsobaricHeatCapacity_Txi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificIsobaricHeatCapacity_Txi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
   replaceable partial function beta_Txi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.isobaricThermalExpansionCoefficient_Txi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.isobaricThermalExpansionCoefficient_Txi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.isobaricThermalExpansionCoefficient_Txi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.isobaricThermalExpansionCoefficient_Txi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
   replaceable partial function Pr_Txi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.prandtlNumber_Txi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.prandtlNumber_Txi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.prandtlNumber_Txi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.prandtlNumber_Txi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
   replaceable partial function lambda_Txi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.thermalConductivity_Txi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.thermalConductivity_Txi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.thermalConductivity_Txi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.thermalConductivity_Txi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
   replaceable partial function eta_Txi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.dynamicViscosity_Txi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.dynamicViscosity_Txi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.dynamicViscosity_Txi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.dynamicViscosity_Txi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
 
   replaceable partial function d_hxi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.density_hxi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.density_hxi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.density_hxi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.density_hxi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
   replaceable partial function T_hxi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.temperature_hxi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.temperature_hxi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.temperature_hxi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.temperature_hxi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
   replaceable partial function cp_hxi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificIsobaricHeatCapacity_hxi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificIsobaricHeatCapacity_hxi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificIsobaricHeatCapacity_hxi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.specificIsobaricHeatCapacity_hxi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
   replaceable partial function beta_hxi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.isobaricThermalExpansionCoefficient_hxi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.isobaricThermalExpansionCoefficient_hxi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.isobaricThermalExpansionCoefficient_hxi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.isobaricThermalExpansionCoefficient_hxi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
   replaceable partial function Pr_hxi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.prandtlNumber_hxi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.prandtlNumber_hxi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.prandtlNumber_hxi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.prandtlNumber_hxi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
   replaceable partial function lambda_hxi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.thermalConductivity_hxi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.thermalConductivity_hxi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.thermalConductivity_hxi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.thermalConductivity_hxi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
   replaceable partial function eta_hxi =
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.dynamicViscosity_hxi
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.dynamicViscosity_hxi
     constrainedby
-      .TILMedia.BaseClasses.PartialLiquidObjectFunctions.dynamicViscosity_hxi(
+      TILMedia.BaseClasses.PartialLiquidObjectFunctions.dynamicViscosity_hxi(
         xi=liquidType.xi_default, liquidPointer=liquidPointer);
 
 
